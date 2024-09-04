@@ -1,0 +1,10 @@
+import { RawAudio } from './AudioUtilities.js';
+import { Timeline } from '../utilities/Timeline.js';
+import { SignalChannel } from '../utilities/SignalChannel.js';
+export declare function playAudioFileWithTimelineFile(audioFilename: string, timelineFileName: string, transcriptFileName?: string): Promise<void>;
+export declare function playAudioWithWordTimeline(rawAudio: RawAudio, wordTimeline: Timeline, transcript?: string): Promise<void>;
+export declare function playAudioWithTimelinePhones(rawAudio: RawAudio, timeline: Timeline): Promise<void>;
+export declare function playAudioPairWithTimelineInterleaved(rawAudio1: RawAudio, rawAudio2: RawAudio, timeline1: Timeline, timeline2: Timeline): Promise<void>;
+export declare function playAudioSamples(rawAudio: RawAudio, onTimePosition?: (timePosition: number) => void, signalChannel?: SignalChannel, microFadeInOut?: boolean): Promise<void>;
+export declare function playAudioSamples_Speaker(rawAudio: RawAudio, onTimePosition?: (timePosition: number) => void, microFadeInOut?: boolean): Promise<void>;
+export declare const charactersToWriteAhead: string[];

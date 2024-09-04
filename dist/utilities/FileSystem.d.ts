@@ -1,0 +1,31 @@
+/// <reference types="node" resolution-mode="require"/>
+/// <reference types="node" resolution-mode="require"/>
+import * as fsExtra from 'fs-extra/esm';
+import gracefulFS from 'graceful-fs';
+export declare const readFile: typeof gracefulFS.readFile.__promisify__;
+export declare const readdir: typeof gracefulFS.readdir.__promisify__;
+export declare const stat: typeof gracefulFS.stat.__promisify__;
+export declare const open: typeof gracefulFS.open.__promisify__;
+export declare const close: typeof gracefulFS.close.__promisify__;
+export declare const chmod: typeof gracefulFS.chmod.__promisify__;
+export declare const copyFile: typeof gracefulFS.copyFile.__promisify__;
+export declare const access: typeof gracefulFS.access.__promisify__;
+export declare const createReadStream: typeof gracefulFS.createReadStream;
+export declare const createWriteStream: typeof gracefulFS.createWriteStream;
+export declare const existsSync: typeof gracefulFS.existsSync;
+export declare const remove: typeof fsExtra.remove;
+export declare const copy: typeof fsExtra.copy;
+export declare const outputFile: typeof fsExtra.outputFile;
+export declare function readDirRecursive(dir: string, fileFilter?: (filePath: string) => boolean): Promise<string[]>;
+export declare function isFileIsUpToDate(filePath: string, timeRangeSeconds: number): Promise<boolean>;
+export declare function computeFileSha256Hex(filePath: string): Promise<string>;
+export declare function readAndParseJsonFile(jsonFilePath: string, useJson5?: boolean): Promise<any>;
+export declare function writeFile(filePath: string, data: string | NodeJS.ArrayBufferView, options?: fsExtra.WriteFileOptions): Promise<void>;
+export declare function writeFileSafe(filePath: string, data: string | NodeJS.ArrayBufferView, options?: fsExtra.WriteFileOptions): Promise<void>;
+export declare function getAppDataDir(appName: string): string;
+export declare function chmodRecursive(rootPath: string, newMode: number): Promise<void>;
+export declare function ensureDir(dirPath: string): Promise<void>;
+export declare function move(source: string, dest: string): Promise<void>;
+export declare function existsAndIsWritable(targetPath: string): Promise<boolean>;
+export declare function testDirectoryIsWritable(dir: string): Promise<boolean>;
+export declare function copyFileAlternative(source: string, dest: string): Promise<void>;

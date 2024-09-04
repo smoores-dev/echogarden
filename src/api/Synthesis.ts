@@ -23,7 +23,7 @@ import chalk from 'chalk'
 import { type SubtitlesConfig } from '../subtitles/Subtitles.js'
 import { type EspeakOptions } from '../synthesis/EspeakTTS.js'
 import { type OpenAICloudTTSOptions  } from '../synthesis/OpenAICloudTTS.js'
-import { type ElevenlabsTTSOptions } from '../synthesis/ElevenlabsTTS.js'
+import { type ElevenlabsTTSOptions } from '../synthesis/ElevenLabsTTS.js'
 import { OnnxExecutionProvider } from '../utilities/OnnxUtilities.js'
 
 const log = logToStderr
@@ -735,7 +735,7 @@ async function synthesizeSegment(text: string, options: SynthesisOptions) {
 				throw new Error(`The Elevenlabs engine doesn't support SSML inputs`)
 			}
 
-			const ElevenLabsTTS = await import('../synthesis/ElevenlabsTTS.js')
+			const ElevenLabsTTS = await import('../synthesis/ElevenLabsTTS.js')
 
 			const engineOptions = options.elevenlabs!
 
@@ -1477,7 +1477,7 @@ export async function requestVoiceList(options: VoiceListRequestOptions): Promis
 			}
 
 			case 'elevenlabs': {
-				const ElevenLabsTTS = await import('../synthesis/ElevenlabsTTS.js')
+				const ElevenLabsTTS = await import('../synthesis/ElevenLabsTTS.js')
 
 				const engineOptions = options.elevenlabs!
 

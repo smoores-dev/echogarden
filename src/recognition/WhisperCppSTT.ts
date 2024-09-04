@@ -248,6 +248,21 @@ async function parseResultObject(resultObject: WhisperCppVerboseResult, modelNam
 		for (let tokenIndex = 0; tokenIndex < tokens.length; tokenIndex++) {
 			const tokenObject = tokens[tokenIndex]
 
+			// This assumes that there will never be two consecutive tokens with
+			// missing time data
+			if (!tokenObject.offsets) {
+				const prevToken = tokens[tokenIndex - 1]
+				const from = prevToken?.offsets.to ?? segmentObject.offsets.from
+
+				const nextToken = tokens[tokenIndex + 1]
+				const to = nextToken?.offsets.from ?? segmentObject.offsets.to
+
+				tokenObject.offsets = {
+					from,
+					to
+				}
+			}
+
 			if (tokenIndex === 0 && tokenObject.text === '[_BEG_]' && tokenObject.offsets.from === 0) {
 				currentCorrectionTimeOffset = segmentObject.offsets.from / 1000
 			}

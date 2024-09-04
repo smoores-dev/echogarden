@@ -803,6 +803,13 @@
         "sourceSeparation": {
           "$ref": "#/definitions/SourceSeparationOptions"
         },
+        "timelineLevel": {
+          "type": "string",
+          "enum": [
+            "word",
+            "segment"
+          ]
+        },
         "whisper": {
           "$ref": "#/definitions/WhisperOptions"
         },

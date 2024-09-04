@@ -298,7 +298,9 @@ export async function recognize(input: AudioSourceParam, options: RecognitionOpt
 	addWordTextOffsetsToTimeline(timeline, transcript)
 
 	// Make segment timeline
-	const { segmentTimeline } = await wordTimelineToSegmentSentenceTimeline(timeline, transcript, languageCode, 'single', 'preserve')
+	const { segmentTimeline } = options.timelineLevel === 'word'
+		? { segmentTimeline: [] }
+		: await wordTimelineToSegmentSentenceTimeline(timeline, transcript, languageCode, 'single', 'preserve')
 
 	logger.end()
 	logger.logDuration('Total recognition time', startTimestamp, chalk.magentaBright)
@@ -352,6 +354,7 @@ export interface RecognitionOptions {
 	vad?: API.VADOptions
 
 	sourceSeparation?: API.SourceSeparationOptions
+	timelineLevel?: 'word' | 'segment'
 
 	whisper?: WhisperOptions
 

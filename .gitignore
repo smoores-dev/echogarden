@@ -6,5 +6,5 @@ echogarden.config.json
 node_modules
 notes
 out
-dist
+# dist
 publish.js

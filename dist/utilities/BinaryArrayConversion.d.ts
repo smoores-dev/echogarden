@@ -1,0 +1,25 @@
+/// <reference types="node" resolution-mode="require"/>
+export declare function int8ToBuffer(int8s: Int8Array): Buffer;
+export declare function int8ToBuffer_Slow(int8s: Int8Array): Buffer;
+export declare function bufferToInt8(buffer: Buffer): Int8Array;
+export declare function bufferToInt8_Slow(buffer: Buffer): Int8Array;
+export declare function int16ToBufferLE(int16s: Int16Array): Buffer;
+export declare function int16ToBufferLE_Slow(int16s: Int16Array): Buffer;
+export declare function bufferLEToInt16(buffer: Buffer): Int16Array;
+export declare function bufferLEToInt16_Slow(buffer: Buffer): Int16Array;
+export declare function int24ToBufferLE(int24s: Int32Array): Buffer;
+export declare function bufferLEToInt24(buffer: Buffer): Int32Array;
+export declare function int32ToBufferLE(int32s: Int32Array): Buffer;
+export declare function int32ToBufferLE_Slow(int32s: Int32Array): Buffer;
+export declare function bufferLEToInt32(buffer: Buffer): Int32Array;
+export declare function bufferLEToInt32_Slow(buffer: Buffer): Int32Array;
+export declare function float32ToBufferLE(float32s: Float32Array): Buffer;
+export declare function float32ToBufferLE_Slow(float32s: Float32Array): Buffer;
+export declare function bufferLEToFloat32(buffer: Buffer): Float32Array;
+export declare function bufferLEToFloat32_Slow(buffer: Buffer): Float32Array;
+export declare function float64ToBufferLE(float64s: Float64Array): Buffer;
+export declare function float64ToBufferLE_Slow(float64s: Float64Array): Buffer;
+export declare function bufferLEToFloat64(buffer: Buffer): Float64Array;
+export declare function bufferLEToFloat64_Slow(buffer: Buffer): Float64Array;
+export declare function float64Tofloat32(float64s: Float64Array): Float32Array;
+export declare function float32Tofloat64(float32s: Float32Array): Float64Array;

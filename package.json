@@ -124,7 +124,10 @@
 		"@types/recursive-readdir": "^2.2.4",
 		"@types/tar": "^6.1.13",
 		"@types/ws": "^8.5.10",
+		"@echogarden/vosk": "0.3.39-patched.1",
+		"speaker": "^0.5.5",
 		"ts-json-schema-generator": "^2.2.0",
-		"typescript": "^5.4.5"
+		"typescript": "^5.4.5",
+		"winax": "^3.5.3"
 	}
 }
